@@ -26,17 +26,20 @@ export default class AppStateListAddSplit extends Component {
   }
 
   render() {
-    const { active, error, list } = this.state;
+    const { active, list } = this.state;
     const book = list[active];
 
     return (
       <div>
         <h1>books</h1>
-        <Books list={this.state.list} />
+        <Books activate={i => this.setState({active: i})} list={this.state.list} />
         <Book {...book} />
 
         <h2>new book</h2>
         <Add add={({author, text, title}) => this.setState({list: [...list, {author, text, title}]})}/>
+        <h2>form2 </h2>
+        <Add add={({author, text, title}) => this.setState({list: [...list, {author, text, title}]})}/>
+
       </div>
     );
   }

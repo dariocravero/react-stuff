@@ -3,7 +3,7 @@ import Authors from './authors';
 
 function mapStateToProps(state, props) {
   return {
-    list: state.books.map(book => book.author)
+    list: state.books.list.map(book => book.author)
   };
 }
 export default connect(mapStateToProps)(Authors);
